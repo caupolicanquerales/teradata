@@ -1,2 +1,12 @@
-com/capo/teradata/App.class
-com/capo/teradata/TeradataApplication.class
+com\capo\teradata\dto\InformationThree.class
+com\capo\teradata\dto\Information.class
+com\capo\teradata\service\SearchingForAnnotationService.class
+com\capo\teradata\service\ConversionService.class
+com\capo\teradata\procedure\ConvertionToStringServiceImpl.class
+com\capo\teradata\annotation\SearchingForAnnotation.class
+com\capo\teradata\TeradataApplication.class
+com\capo\teradata\annotation\Teradata.class
+com\capo\teradata\App.class
+com\capo\teradata\procedure\Convertion.class
+com\capo\teradata\dto\InformationTwo.class
+com\capo\teradata\service\ConvertionToStringService.class

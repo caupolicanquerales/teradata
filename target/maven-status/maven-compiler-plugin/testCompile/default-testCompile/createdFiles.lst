@@ -1,1 +1,4 @@
-com/capo/teradata/TeradataApplicationTests.class
+com\capo\teradata\procedure\ConvertionToStringServiceImplTest.class
+com\capo\teradata\procedure\ConvertionTest.class
+com\capo\teradata\annotation\SearchingForAnnotationTest.class
+com\capo\teradata\TeradataApplicationTests.class
