@@ -1,8 +1,9 @@
 package com.capo.teradata;
 
-import com.capo.teradata.enums.InformationEnum;
-import com.capo.teradata.enums.InformationEnumTwo;
-import com.capo.teradata.implExecuteInterface.ClaseParaImprimirEnum;
+import com.capo.teradata.dto.InformationThree;
+import com.capo.teradata.dto.InformationTwo;
+import com.capo.teradata.implExecuteInterface.ClasePrimeraDeEjecucion;
+import com.capo.teradata.implExecuteInterface.ClaseSegundaDeEjecucion;
 import com.capo.teradata.service.EjecucionHilosService;
 import com.capo.teradata.service.ExecuteService;
 import com.capo.teradata.threadEjecucion.ClaseEjecucionHilos;
@@ -10,11 +11,31 @@ import com.capo.teradata.threadEjecucion.ClaseEjecucionHilos;
 public class App {
 
 	public static void main(String[] args) {
-		EjecucionHilosService claseEjecucionHilos= new ClaseEjecucionHilos();
-		ExecuteService paraImprimirEnum= new ClaseParaImprimirEnum(InformationEnumTwo.DATO_3);
-		ExecuteService paraImprimirEnum2= new ClaseParaImprimirEnum(InformationEnum.DATO_1);
+		
+		ExecuteService primeraDeEjecucion= new ClasePrimeraDeEjecucion(setInformationTwo());
+		ExecuteService segundaDeEjecucion= new ClaseSegundaDeEjecucion(setInformationThree());
+		
 		System.out.println("Imprimiendo desde el test Primero");
-		claseEjecucionHilos.execute(paraImprimirEnum,paraImprimirEnum2);
+		
+		EjecucionHilosService claseEjecucionHilos= new ClaseEjecucionHilos();
+		claseEjecucionHilos.execute(primeraDeEjecucion,segundaDeEjecucion);
+		
+		System.out.println("Imprimiendo desde el test Segundo");
+	}
+	
+	private static InformationTwo setInformationTwo() {
+		InformationTwo informationTwo=new InformationTwo();
+		informationTwo.setApellido("Maradona");
+		informationTwo.setCuidades("Buenos aires");
+		informationTwo.setSueldo(11555000L);
+		informationTwo.setYear(8989);
+		return informationTwo;
+	}
+	private static InformationThree setInformationThree() {
+		InformationThree informationThree=new InformationThree();
+		informationThree.setPais("Argentina");
+		informationThree.setSillas(48);
+		return informationThree;
 	}
 
 }
