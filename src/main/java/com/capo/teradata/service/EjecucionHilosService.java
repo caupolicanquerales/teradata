@@ -1,5 +1,5 @@
 package com.capo.teradata.service;
 
 public interface EjecucionHilosService {
-	public void execute(ExecuteService...objects);
+	public <E,T,R> void execute(Class<E>objects,T request,R response);
 }

@@ -5,7 +5,8 @@ import com.capo.teradata.service.DatosEnum;
 public enum InformationEnumTwo implements DatosEnum{
 	
 	DATO_3("dato1","Colombia"),
-	DATO_4("dato_2","Argentina");
+	DATO_4("dato_2","Argentina"),
+	DATO_5("dato_3","Dia de hoy");
 	
 	String codigo;
 	String valor;

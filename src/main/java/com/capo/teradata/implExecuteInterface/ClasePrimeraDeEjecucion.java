@@ -3,6 +3,7 @@ package com.capo.teradata.implExecuteInterface;
 import java.util.Map;
 
 import com.capo.teradata.chainingMethod.ClassChainingMethod;
+import com.capo.teradata.dto.InformationThree;
 import com.capo.teradata.dto.InformationTwo;
 import com.capo.teradata.enums.InformationEnum;
 import com.capo.teradata.enums.InformationEnumTwo;
@@ -11,18 +12,19 @@ import com.capo.teradata.service.ExecuteService;
 public class ClasePrimeraDeEjecucion implements ExecuteService {
 	
 	private InformationTwo informationTwo;
+	private InformationThree informationFour;
 	
-	public ClasePrimeraDeEjecucion(InformationTwo informationTwo) {
-		this.informationTwo=informationTwo;
+	public <T,R> ClasePrimeraDeEjecucion(T request,R response) {
+		this.informationTwo=(InformationTwo) request;
+		this.informationFour=(InformationThree)response;
 	}
 	
 	@Override
-	public void execute() {
-		Map<String,Object> result=getMap();
-		System.out.println("ClasePrimera "+result);
+	public Map<String,String> execute() {
+		 return getMap();
 	}
 	
-	private Map<String,Object> getMap(){
+	private Map<String,String> getMap(){
 		return ClassChainingMethod.initialization().
 				setValue(InformationEnum.DATO_2, informationTwo.getApellido()).
 				setValue(InformationEnumTwo.DATO_3, informationTwo.getCuidades()).
