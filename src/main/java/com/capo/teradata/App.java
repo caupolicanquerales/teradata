@@ -5,20 +5,17 @@ import com.capo.teradata.dto.InformationTwo;
 import com.capo.teradata.implExecuteInterface.ClasePrimeraDeEjecucion;
 import com.capo.teradata.implExecuteInterface.ClaseSegundaDeEjecucion;
 import com.capo.teradata.service.EjecucionHilosService;
-import com.capo.teradata.service.ExecuteService;
 import com.capo.teradata.threadEjecucion.ClaseEjecucionHilos;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		ExecuteService primeraDeEjecucion= new ClasePrimeraDeEjecucion(setInformationTwo());
-		ExecuteService segundaDeEjecucion= new ClaseSegundaDeEjecucion(setInformationThree());
-		
 		System.out.println("Imprimiendo desde el test Primero");
 		
-		EjecucionHilosService claseEjecucionHilos= new ClaseEjecucionHilos();
-		claseEjecucionHilos.execute(primeraDeEjecucion,segundaDeEjecucion);
+		EjecucionHilosService claseEjecucionHilos= ClaseEjecucionHilos.getObject();
+		claseEjecucionHilos.execute(ClasePrimeraDeEjecucion.class,setInformationTwo(),setInformationThree());
+		claseEjecucionHilos.execute(ClaseSegundaDeEjecucion.class,setInformationThree(),setInformationThree());
 		
 		System.out.println("Imprimiendo desde el test Segundo");
 	}

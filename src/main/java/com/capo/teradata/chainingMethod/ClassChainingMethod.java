@@ -9,12 +9,11 @@ import com.capo.teradata.service.DatosEnum;
 
 public class ClassChainingMethod {
 	
-	ConversionService conversion;
+	ConversionService conversion= Convertion.getConvertionObject();
 	
-	private Map<String,Object> mapValue;
+	private Map<String,String> mapValue;
 	
 	private ClassChainingMethod() {
-		conversion= new Convertion();
 		mapValue= new HashMap<>();
 	}
 	
@@ -28,7 +27,14 @@ public class ClassChainingMethod {
 		mapValue.put(valueKey,valueString);
 		return this;
 	}
-	public Map<String,Object> close(){
+	public  ClassChainingMethod setValue(DatosEnum key,DatosEnum identicador,Object value){
+		String valueString=conversion.convertion(identicador.getValue(), value);
+		String valueKey=key.getValue();
+		mapValue.put(valueKey,valueString);
+		return this;
+	}
+	
+	public Map<String,String> close(){
 		return mapValue;
 	}
 }

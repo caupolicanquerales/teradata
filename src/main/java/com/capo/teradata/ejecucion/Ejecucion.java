@@ -12,7 +12,7 @@ import com.capo.teradata.service.SearchingForAnnotationService;
 public class Ejecucion implements EjecucionService {
 	
 	SearchingForAnnotationService searchingForAnnotation= new SearchingForAnnotation();
-	ConversionService conversion= new Convertion();
+	ConversionService conversion= Convertion.getConvertionObject();
 	
 	@Override
 	public Map<String,String> getValues(Object... objects){

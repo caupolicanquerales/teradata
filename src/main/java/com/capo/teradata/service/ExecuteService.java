@@ -1,5 +1,7 @@
 package com.capo.teradata.service;
 
+import java.util.Map;
+
 public interface ExecuteService {
-	public void execute();
+	public Map<String,String> execute();
 }

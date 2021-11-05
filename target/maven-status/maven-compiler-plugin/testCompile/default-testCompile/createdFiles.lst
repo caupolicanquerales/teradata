@@ -2,6 +2,8 @@ com/capo/teradata/annotation/SearchingForAnnotationTest.class
 com/capo/teradata/procedure/ConvertionToStringServiceImplTest.class
 com/capo/terada/threadEjecucion/ClaseEjecucionHilosTest.class
 com/capo/teradata/ejecucionEnum/EjecucionConEnumTest.class
+com/capo/teradata/instanciarClase/InstanciarClaseTest.class
 com/capo/teradata/TeradataApplicationTests.class
 com/capo/teradata/ejecucion/EjecucionTest.class
+com/capo/terada/chainingMethod/ClassChainingMethodTest.class
 com/capo/teradata/procedure/ConvertionTest.class
